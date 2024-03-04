@@ -1,0 +1,37 @@
+---
+const Servicies = [
+  {
+    title: "Clase Grupal",
+    description: "Sessión con grupo de máximo 4 personas.",
+    img: "pexels-mati-mango-3193846.jpg",
+    price: "50€/Hora x Persona",
+  },
+  {
+    title: "Clase Privada",
+    description: "Lecciones uno a uno para un aprendizaje más personalizado.",
+    img: "pexels-bogdan-sameliuk-15572304.jpg",
+    price: "50€/Hora",
+  },
+  {
+    title: "Programa de Temporada",
+    description:
+      "Programa de esquí para toda la temporada con feedback del instructor.",
+    img: "pexels-evgenia-kirpichnikova-1973293.jpg",
+    price: "800€/Temporada",
+  },
+];
+---
+
+<div class="flex flex-col md:flex-row justify-between items-center mt-20 mb-10">
+  <!-- <h2 class="text-center text-2xl font-bold mb-4">Servicios</h2> -->
+  {
+    Servicies.map(({ title, description, img, price }, i) => (
+      <div class="flex flex-col w-[90%] md:w-full md:min-h-96 mx-auto my-4 md:justify-between md:items-center ">
+        <img src={img} class="w-full md:w-[26rem] h-60 rounded-xl" alt={"Foto " + title} />
+        <h3 class="font-extrabold my-2 text-center">{title}</h3>
+        <p class="text-[#467091] my-1 text-center">{price}</p>
+        <p class="text-[#467091] my-1 text-center">{description}</p>
+      </div>
+    ))
+  }
+</div>
